@@ -1,0 +1,198 @@
+{% extends 'main.html' %} 
+{% load i18n %} 
+{% load static %}
+{% block content %}
+
+<main class="layout layout--3">
+  <div class="container">
+    {% get_current_language as LANGUAGE_CODE %}
+    <h1>ŞUANKİ DİL :) ---> {{LANGUAGE_CODE}}</h1>
+    <h1>{% trans "Let's translate this" %}</h1>
+  </div>
+  <select name="langOpt3[]" multiple="" id="langOpt3" class="jqmsLoaded" style="display: none;">
+    <option value="C++">C++</option>
+    <option value="C#">C#</option>
+    <option value="Java">Java</option>
+    <option value="Objective-C">Objective-C</option>
+    <option value="JavaScript">JavaScript</option>
+    <option value="Perl">Perl</option>
+    <option value="PHP">PHP</option>
+    <option value="Ruby on Rails">Ruby on Rails</option>
+    <option value="Android">Android</option>
+    <option value="iOS">iOS</option>
+    <option value="HTML">HTML</option>
+    <option value="XML">XML</option>
+    </select>
+  <div class="ms-options-wrap" style="position: relative">
+    <button>
+      C++, C#, Java, Objective-C, JavaScript, Perl, PHP, Ruby on Rails, Android,
+      iOS, HTML, XML
+    </button>
+    <div
+      class="ms-options"
+      style="
+        min-height: 200px;
+        overflow: auto;
+        max-height: 627px;
+        display: none;
+      "
+    >
+      <div class="ms-search">
+        <input type="text" value="" placeholder="Search" />
+      </div>
+      <a href="#" class="ms-selectall global">Select all</a>
+      <ul style="column-count: 1; column-gap: 0px">
+        <li class="selected">
+          <label for="ms-opt-25" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="C++"
+              title="C++"
+              id="ms-opt-25"
+            />C++</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-26" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="C#"
+              title="C#"
+              id="ms-opt-26"
+            />C#</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-27" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="Java"
+              title="Java"
+              id="ms-opt-27"
+            />Java</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-28" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="Objective-C"
+              title="Objective-C"
+              id="ms-opt-28"
+            />Objective-C</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-29" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="JavaScript"
+              title="JavaScript"
+              id="ms-opt-29"
+            />JavaScript</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-30" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="Perl"
+              title="Perl"
+              id="ms-opt-30"
+            />Perl</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-31" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="PHP"
+              title="PHP"
+              id="ms-opt-31"
+            />PHP</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-32" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="Ruby on Rails"
+              title="Ruby on Rails"
+              id="ms-opt-32"
+            />Ruby on Rails</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-33" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="Android"
+              title="Android"
+              id="ms-opt-33"
+            />Android</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-34" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="iOS"
+              title="iOS"
+              id="ms-opt-34"
+            />iOS</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-35" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="HTML"
+              title="HTML"
+              id="ms-opt-35"
+            />HTML</label
+          >
+        </li>
+        <li class="selected">
+          <label for="ms-opt-36" style="padding-left: 23px"
+            ><input
+              type="checkbox"
+              value="XML"
+              title="XML"
+              id="ms-opt-36"
+            />XML</label
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static 'js/jquery.multiselect.js' %}"></script>
+<script>
+  // $('#langOpt').multiselect({
+  //     columns: 1,
+  //     placeholder: 'Select Languages'
+  // });
+  
+  // $('#langOpt2').multiselect({
+  //     columns: 1,
+  //     placeholder: 'Select Languages',
+  //     search: true
+  // });
+  
+  $('#langOpt3').multiselect({
+      columns: 1,
+      placeholder: 'Select Languages',
+      search: true,
+      selectAll: true
+  });
+  
+  // $('#langOptgroup').multiselect({
+  //     columns: 4,
+  //     placeholder: 'Select Languages',
+  //     search: true,
+  //     selectAll: true
+  // });
+  </script>
+
+{% endblock content %}

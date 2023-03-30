@@ -1,0 +1,1 @@
+bazı genel nginx ayarları için (log, server names hash bucket size vs) ayrı bir conf doyası yap duplice olup hata veriyor

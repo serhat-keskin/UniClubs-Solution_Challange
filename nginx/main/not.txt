@@ -1,0 +1,2 @@
+burası nginx/etc/conf.d ile eşlenebilir ve buraya combine edilmesini istediğin bütün conf dosyalarını aktarabilirsin.
+(docker da nginx volume'unu burayla eşlemeyi unutma)

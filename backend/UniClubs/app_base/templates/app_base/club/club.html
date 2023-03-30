@@ -1,0 +1,269 @@
+{% extends 'main.html' %}
+
+{% load i18n %}
+{% block content %}
+<style>
+ .room__header.scroll {
+    height: 53%; 
+    max-height: 100%; 
+    margin-top: 3rem;
+  }
+  .room__details img {
+    display: block; margin: 0 auto; width: 50vh; height: 50vh;
+  }
+
+  .room__conversation h2 {
+    position: absolute; 
+    margin-top: -4rem;
+    color: aqua;
+  }
+  .thread__author{
+    width: 100%;
+    height: 100%;
+  }
+  .thread__author a{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .thread__author img {
+    height: 20vh; 
+    width: 20vh;
+  }
+  .thread__author h1 {
+    align-self: center; 
+    font-size: 3rem;
+  }
+  .thread__author span{
+    align-self: center;
+  }
+
+  @media screen and (max-width: 500px) {
+  .btn.btn--main{
+    width: 10vh;
+    height: 5vh;
+    align-self: center;
+    text-align: justify;
+    font-size: 1rem;
+    padding: 0;
+  } 
+  .btn.btn--main:first-of-type {
+    margin-left: 0.5rem;
+    padding: 0rem 0.5rem;
+  }
+
+  .room__details img {
+    display: block; margin: 0 auto; width: 20vh; height: 20vh;
+  }
+  .thread__author img {
+    height: 10vh; 
+    width: 10vh;
+  }
+  .room__topRight{
+    width: 80%;
+  }
+  #language-form{
+    display: none;
+  }
+
+  .room__box.scroll{
+    overflow: hidden;
+  }
+}
+</style>
+
+    <main class="profile-page layout layout--2">
+      <div class="container">
+        <!-- Room Start -->
+
+        <div class="room">
+          <div class="room__top">
+            <div class="room__topLeft">
+              <a href="{% url 'home' %}">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <title>arrow-left</title>
+                  <path
+                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z"
+                  ></path>
+                </svg>
+              </a>
+              <h3>{% trans "Kulüp" %}</h3>
+            </div>
+            
+            <div class="room__topRight">
+
+              {% if request.user.is_authenticated %}
+
+                <a class="btn btn--main" href="{% url 'join_club' club.id %}">
+                  <!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>Katıl</title>
+                    <path
+                    d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
+                    ></path>
+                  </svg> -->
+                  {% trans "Katıl!" %}
+                </a>
+
+              {% endif %}
+
+              {% if request.user == club.leader %}
+
+              <a class="btn btn--main" href="{% url 'create_event' club.id %}">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <title>Etkinlik</title>
+                  <path
+                      d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
+                  ></path>
+                  </svg>
+                  {% trans "Etkinlik Oluştur" %}
+              </a>
+              <a class="btn btn--main" href="{% url 'create_announcement' club.id %}">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                <title>Etkinlik</title>
+                <path
+                    d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
+                ></path>
+                </svg>
+                {% trans "Duyuru Oluştur" %}
+              </a>
+                <a href="{% url 'update_club' club.id %}">
+                  <svg
+                    enable-background="new 0 0 24 24"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    width="32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>{% trans "Düzenle" %}</title>
+                    <g>
+                      <path d="m23.5 22h-15c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h15c.276 0 .5.224.5.5s-.224.5-.5.5z" />
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="m2.5 22c-.131 0-.259-.052-.354-.146-.123-.123-.173-.3-.133-.468l1.09-4.625c.021-.09.067-.173.133-.239l14.143-14.143c.565-.566 1.554-.566 2.121 0l2.121 2.121c.283.283.439.66.439 1.061s-.156.778-.439 1.061l-14.142 14.141c-.065.066-.148.112-.239.133l-4.625 1.09c-.038.01-.077.014-.115.014zm1.544-4.873-.872 3.7 3.7-.872 14.042-14.041c.095-.095.146-.22.146-.354 0-.133-.052-.259-.146-.354l-2.121-2.121c-.19-.189-.518-.189-.707 0zm3.081 3.283h.01z"
+                        />
+                      </g>
+                      <g>
+                        <path
+                          d="m17.889 10.146c-.128 0-.256-.049-.354-.146l-3.535-3.536c-.195-.195-.195-.512 0-.707s.512-.195.707 0l3.536 3.536c.195.195.195.512 0 .707-.098.098-.226.146-.354.146z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </a>
+                <a href="{% url 'delete_club' club.id %}">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>{% trans "Sil" %}</title>
+                    <path
+                      d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
+                    ></path>
+                  </svg>
+                </a>
+                {% endif %}
+            </div>
+
+
+          
+          </div>
+          <div class="room__box scroll">
+            <div class="room__header scroll">
+              <div class="room__info">
+                <h3>{{club.name}}</h3>
+                <span>{{club.created|timesince}} {% trans "önce" %}</span>
+              </div>
+              <div class="room__hosted">
+                <a href="{% url 'user_profile' club.leader.id %}" class="room__author">
+                  <div class="avatar avatar--small">
+                    <img src="{{club.leader.avatar.url}}" />
+                  </div>
+                  <span>@{{club.leader.name}}</span>
+                  <p>{% trans "Tarafından Oluşturuldu" %}</p>
+                </a>
+              </div>
+              <span class="room__topics">{{club.topic}}</span>
+              <div class="room__details">
+                <img src="{{club.logo.url}}"><br>
+                <p>
+                  {{club.description}}
+                </p>
+              </div>
+            </div>
+            <div class="room__conversation">
+              <h2>{% trans "KULÜBÜN ETKİNLİKLERİ" %}</h2>
+              <div class="threads scroll">
+                {% for event in club_events %}
+                <div class="thread">
+                  <div class="thread__top">
+                    <div class="thread__author">
+                      <a href="{% url 'event' event.id %}">  <!--  flex yapılabilir-->
+                        <!-- <div class="avatar avatar--small">
+                        </div> -->
+                        <img src="{{event.photo.url}}"/>
+                        <!-- <span style="align-self: center;"><h2>{{event.name}}</h2></span> -->
+                        <h1>{{event.name}}</h1>
+                        <span class="thread__date">{{event.created|timesince}} {% trans "önce" %}</span>
+                      </a>
+                    </div>
+
+                    {% if request.user.is_admin %}
+
+                    <a href="{% url 'delete_event' event.id %}">
+                      <div class="thread__delete">
+
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                          <title>Sil</title>
+                          <path
+                          d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
+                          ></path>
+                        </svg>
+
+                      </div>
+                    </a>
+                    
+                    {% endif %}
+                    
+                  </div>
+
+                  <!-- <div class="thread__details">
+                    {{event.description}}
+                  </div> -->
+
+                </div>
+          
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+      
+        </div>
+        <!-- Room End -->
+
+        <!--   Start -->
+        <div class="participants">
+          <h3 class="participants__top">{% trans "Üyeler" %} <span>({{participants.count}})</span></h3>
+          <div class="participants__list scroll">
+
+            {% for user in participants %}
+            <a href="{% url 'user_profile' user.id %}" class="participant">
+              <div class="avatar avatar--medium">
+                <img src={{user.avatar.url}} />
+              </div>
+              <p>
+                {{user}}
+                <span>@{{user}}</span>
+              </p>
+            </a>
+            {% endfor %}
+            
+           
+          </div>
+        </div>
+        <!--  End -->
+      </div>
+    </main>
+    <!-- <script src="script.js"></script> -->
+
+{% endblock content %}

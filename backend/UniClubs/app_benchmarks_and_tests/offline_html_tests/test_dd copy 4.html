@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Select Checkbox Dropdown List</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Your CSS -->
+  <style>
+    .dropdown-menu {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-item input[type="checkbox"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <form id="my-form">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Options
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item">
+            <input type="checkbox" id="option1" name="option1" value="option1">
+            <label for="option1">Option 1</label>
+          </a>
+          <a class="dropdown-item">
+            <input type="checkbox" id="option2" name="option2" value="option2">
+            <label for="option2">Option 2</label>
+          </a>
+          <a class="dropdown-item">
+            <input type="checkbox" id="option3" name="option3" value="option3">
+            <label for="option3">Option 3</label>
+          </a>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Your JS -->
+  <script>
+    const myForm = document.querySelector('#my-form');
+    myForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // prevent form submission
+      const formData = new FormData(myForm); // create a new form data object
+      const selectedOptions = [];
+      formData.forEach((value, key) => {
+        if (value === 'on') { // handle checkboxes that are checked
+          selectedOptions.push(key);
+        }
+      });
+      console.log(selectedOptions); // or do something else with selected options
+
+      // submit the form data to the backend
+      fetch('/your-endpoint', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('There was an error:', error);
+      });
+    });
+  </script>
+</body>
+</html>

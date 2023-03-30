@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if page == 'login' %}  <!--  viewsdan template'e yollanan page parametresi 'login' ise login sayfasına ait bu kodları çalıştır -->
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <label>Kullanıcı Adı:</label>
+        <input type="text" name="username" placeholder="Kullanıcı Adınızı Girin">
+        <label>Şifre:</label>
+        <input type="password" name="password" placeholder="Şifrenizi Girin">
+    
+        <input type="submit" value="Login">
+    
+        <p>Henüz kayıt olmadınız mı ?</p>
+        <a href="{% url 'register' %}">Kayıt Ol</a>
+    </form>
+</div>
+
+{% else %}  <!--  viewsdan template'e yollanan page parametresi 'login' değil ise Register sayfasına ait bu kodları çalıştır -->
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Register">
+    </form>
+    <p>Zaten kayıt oldunuz mu ?</p>
+    <a href="{% url 'login' %}">Giriş Yap</a>
+</div>
+
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Select Checkbox Dropdown List</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Your CSS -->
+  <style>
+    .dropdown-menu {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-item input[type="checkbox"] {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Options
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item">
+          <input type="checkbox" id="option1" name="option1" value="option1">
+          <label for="option1">Option 1</label>
+        </a>
+        <a class="dropdown-item">
+          <input type="checkbox" id="option2" name="option2" value="option2">
+          <label for="option2">Option 2</label>
+        </a>
+        <a class="dropdown-item">
+          <input type="checkbox" id="option3" name="option3" value="option3">
+          <label for="option3">Option 3</label>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- Your JS -->
+  <script>
+    
+const dropdownItems = document.querySelectorAll('.dropdown-item');
+const selectedOptions = [];
+
+dropdownItems.forEach((item) => {
+  const checkbox = item.querySelector('input[type="checkbox"]');
+  item.addEventListener('click', (event) => {
+    if (event.target.tagName !== 'INPUT') {
+      event.preventDefault(); // prevent the default dropdown behavior for non-checkbox items
+      checkbox.click(); // click the checkbox once
+      // update selected options
+      selectedOptions.length = 0;
+      dropdownItems.forEach((item) => {
+        const checkbox = item.querySelector('input[type="checkbox"]');
+        if (checkbox.checked) {
+          selectedOptions.push(checkbox.value);
+        }
+      });
+      console.log(selectedOptions); // or do something else with selected options
+    }
+  });
+});
+
+const dropdownMenu = document.querySelector('.dropdown-menu');
+dropdownMenu.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+  </script>
+</body>
+</html>

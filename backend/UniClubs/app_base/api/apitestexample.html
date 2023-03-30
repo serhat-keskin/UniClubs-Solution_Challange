@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cool Rooms</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    
+
+    <div>
+        <hr>
+        <h1>Bütün Odalar</h1>
+        <hr>
+        
+        <div id="rooms-container"></div>
+    </div>
+    <br>
+    <hr><hr><hr>
+    <br>
+    <div>
+        <hr>
+        <h1>Id İle Getirilen Oda</h1>
+        <hr>
+
+        <div id="room-container"></div>
+   
+    </div>
+     <hr>
+
+
+</body>
+
+<script>
+    let roomsContainer = document.getElementById('rooms-container')
+
+    let getRooms = async () => {
+        let response = await fetch('http://127.0.0.1:8000/api/rooms/')
+        let rooms = await response.json()
+
+        for (let i = 0; rooms.length > i; i++) {
+            let room = rooms[i]
+
+            let row = `<div>
+                            <h3>${room.name}</h3>
+                        </div>`
+
+            roomsContainer.innerHTML += row
+        }
+        
+    }
+
+    getRooms()
+
+
+
+    let roomsContainer2 = document.getElementById('room-container')
+
+    let getRoom = async () => {
+        let response = await fetch('http://127.0.0.1:8000/api/rooms/7')
+        let room = await response.json()
+
+        // for (let i = 0; room.length > i; i++) {
+        //     let room = room[i]
+
+        //     let row = `<div>
+        //                     <h3>${room.name}</h3>
+        //                 </div>`
+
+        //     roomsContainer2.innerHTML += row
+        // }
+        
+
+            let row = `<div>
+                            <h3>${room.name}</h3>
+                        </div>`
+
+            roomsContainer2.innerHTML += row
+        
+    }
+
+    getRoom()
+</script>
+
+</html>

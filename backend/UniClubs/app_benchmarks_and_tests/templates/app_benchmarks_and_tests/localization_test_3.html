@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<main class="layout layout--3">
+      <div class="container">
+        {% get_current_language as LANGUAGE_CODE %}
+        <h1>ŞUANKİ DİL :) --->  {{LANGUAGE_CODE}}</h1>
+        <h1>{% trans "Let's translate this" %}</h1>
+      </div>
+      <div class="container">
+
+        <h1><a href="{% url 'routes' %}">{% url 'routes' %}</a></h1>
+        <h1><a href="{% url 'localization_1' %}">{% url 'localization_1' %}</a></h1>
+
+
+        <form action="{% url 'set_language'%}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{redirect_to}}">
+            <select name="language" id="">
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Change Language">
+        </form>
+
+      </div>
+      <!-- <div class="language-picker js-language-picker container" data-trigger-class="li4-btn li4-btn--subtle js-tab-focus">
+        <form action="" class="language-picker__form">
+          <label for="language-picker-select">Select your language</label>
+      
+          <select name="language-picker-select" id="language-picker-select">
+            <option lang="de" value="deutsch">Deutsch</option>
+            <option lang="en" value="english" selected>English</option>
+            <option lang="fr" value="francais">Français</option>
+            <option lang="it" value="italiano">Italiano</option>
+          </select>
+        </form>
+      </div> -->
+      <!-- <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle "><form action="" class="language-picker__form"><label for="language-picker-select">Select your language</label> <select name="language-picker-select" id="language-picker-select"><option lang="de" value="deutsch">Deutsch</option><option lang="en" value="english" selected="selected">English</option><option lang="fr" value="francais">Français</option><option lang="it" value="italiano">Italiano</option></select></form><button class="language-picker__button btn btn--subtle " aria-label="english Select your language" aria-expanded="false" aria-controls="language-picker-select-dropdown"><span aria-hidden="true" class="language-picker__label language-picker__flag language-picker__flag--english"><svg viewBox="0 0 16 16" class="icon"><path d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M13.9,7H12c-0.1-1.5-0.4-2.9-0.8-4.1 C12.6,3.8,13.6,5.3,13.9,7z M8,14c-0.6,0-1.8-1.9-2-5H10C9.8,12.1,8.6,14,8,14z M6,7c0.2-3.1,1.3-5,2-5s1.8,1.9,2,5H6z M4.9,2.9 C4.4,4.1,4.1,5.5,4,7H2.1C2.4,5.3,3.4,3.8,4.9,2.9z M2.1,9H4c0.1,1.5,0.4,2.9,0.8,4.1C3.4,12.2,2.4,10.7,2.1,9z M11.1,13.1 c0.5-1.2,0.7-2.6,0.8-4.1h1.9C13.6,10.7,12.6,12.2,11.1,13.1z"></path></svg><em>English</em><svg viewBox="0 0 16 16" class="icon"><polygon points="3,5 8,11 13,5 "></polygon></svg></span></button><div class="language-picker__dropdown" aria-describedby="language-picker-select-description" id="language-picker-select-dropdown"><p class="sr-only" id="language-picker-select-description">Select your language</p><ul class="language-picker__list" role="listbox"><li><a lang="de" hreflang="de" href="#" role="option" data-value="deutsch" class="language-picker__item language-picker__flag language-picker__flag--deutsch"><span>Deutsch</span></a></li><li><a lang="en" hreflang="en" href="#" aria-selected="true" role="option" data-value="english" class="language-picker__item language-picker__flag language-picker__flag--english"><span>English</span></a></li><li><a lang="fr" hreflang="fr" href="#" role="option" data-value="francais" class="language-picker__item language-picker__flag language-picker__flag--francais"><span>Français</span></a></li><li><a lang="it" hreflang="it" href="#" role="option" data-value="italiano" class="language-picker__item language-picker__flag language-picker__flag--italiano"><span>Italiano</span></a></li></ul></div></div> -->
+</main>
+
+
+
+{% endblock content %}
+

@@ -1,0 +1,1 @@
+daha detaylı manipüle edebilmek için ayrı bir nginx yml file'ı gerekbilir bunda sadece nginx olacak

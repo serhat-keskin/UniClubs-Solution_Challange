@@ -1,0 +1,44 @@
+Django==3.2.7
+gunicorn==20.1.0 # WSGI
+django-cors-headers==3.14.0
+djangorestframework==3.12.4
+djangorestframework_simplejwt==4.7.2
+dj-rest-auth==2.2.7
+drf-spectacular==0.21.2 # api dokümantasyonu
+#drf-yasg # api dokümantasyonu (alternetif)
+psycopg2-binary==2.9.4  # psycopg2 de hata alırsan bunu dene  
+# psycopg2==2.9.4    
+Pillow==8.3.2
+boto3==1.24.67      
+botocore==1.27.88
+requests==2.25.1
+uritools==4.0.0
+urllib3==1.26.12
+PyYAML==6.0
+django-storages==1.11.1
+django-storages[google]==1.11.1
+google-api-python-client==2.79.0 ## aşağısındaki 4 libi öneriyior(ilk 2'si dependicies)
+uritemplate==4.1.1 # restful ve urilerle çalışırken
+httplib2==0.21.0
+pyOpenSSL==23.0.0
+# WebTest==3.0.0 # dev için gerekli değil gibi eskimiş duruyor
+# markdown==3.4.1       # Markdown support for the browsable API.
+# django-filter==22.1  # Filtering support
+django-dotenv==1.4.2;
+pycodestyle==2.7.0
+pytz==2021.1
+sqlparse==0.4.2
+toml==0.10.2
+numpy==1.23.3   
+# reportlab==3.5.68
+lxml==4.8.0
+zeep==4.1.0
+# sentry-sdk==1.9.0
+xhtml2pdf==0.2.8
+asgiref==3.4.1
+autopep8==1.5.7
+django-extensions==3.2.1
+#acme==2.1.0  # ssl sertifika otomasyonu (lets encrypt)
+mypy-extensions==0.4.3 # python kodunun doğruluğu ile ilgili
+django-simple-history==3.2.0  #modelsların geçmişini tutuyor
+django-debug-toolbar==3.8.1

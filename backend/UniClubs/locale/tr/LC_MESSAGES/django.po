@@ -1,0 +1,490 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-29 21:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: app_base/templates/app_base/admin_panel/index.html:106
+msgid "Etkinlik Yönetim"
+msgstr "Etkinlik Yönetimi"
+
+#: app_base/templates/app_base/admin_panel/index.html:113
+msgid "Onay Bekleyenler"
+msgstr "Onay Bekleyenler"
+
+#: app_base/templates/app_base/admin_panel/index.html:119
+msgid "Yönlendirilenler"
+msgstr "Yönlendirilenler"
+
+#: app_base/templates/app_base/admin_panel/index.html:125
+msgid "Reddedilenler"
+msgstr "Reddedilenler"
+
+#: app_base/templates/app_base/admin_panel/index.html:133
+msgid "Onaylananlar"
+msgstr "Onaylananlar"
+
+#: app_base/templates/app_base/admin_panel/index.html:137
+msgid "Raporu Teslim Edilenler"
+msgstr "Raporu Teslim Edilenler"
+
+#: app_base/templates/app_base/admin_panel/index.html:140
+msgid "Raporu Teslim Edilmeyenenler"
+msgstr "Raporu Teslim Edilmeyenenler"
+
+#: app_base/templates/app_base/admin_panel/index.html:146
+msgid "İdari Personel Yönetim"
+msgstr "İdari Personel Yönetim"
+
+#: app_base/templates/app_base/admin_panel/index.html:152
+msgid "Yetkililer"
+msgstr "Yetkililer"
+
+#: app_base/templates/app_base/admin_panel/index.html:156
+msgid "Sistem Admini"
+msgstr "Sistem Admini"
+
+#: app_base/templates/app_base/admin_panel/index.html:159
+msgid "Kurum Personeli"
+msgstr "Kurum Personeli"
+
+#: app_base/templates/app_base/admin_panel/index.html:162
+msgid "Kulüp Lideri"
+msgstr "Kulüp Lideri"
+
+#: app_base/templates/app_base/admin_panel/index.html:165
+msgid "Kulüp Yöneticisi"
+msgstr "Kulüp Yöneticisi"
+
+#: app_base/templates/app_base/admin_panel/index.html:186
+msgid "Google Developer Students Club"
+msgstr "Google Developer Students Club"
+
+#: app_base/templates/app_base/admin_panel/index.html:187
+msgid "Flutter Bootcamp"
+msgstr "Flutter Bootcamp"
+
+#: app_base/templates/app_base/admin_panel/index.html:188
+msgid ""
+"Deneyimli Google Flutter eğitmenleriyle 10 günlük sertifikali bir bootcamp "
+"düzenliyoruz."
+msgstr ""
+"Deneyimli Google Flutter eğitmenleriyle 10 günlük sertifikali bir bootcamp "
+"düzenliyoruz."
+
+#: app_base/templates/app_base/admin_panel/index.html:194
+#: app_base/templates/app_base/admin_panel/index.html:218
+msgid "Kabul et"
+msgstr "Kabul et"
+
+#: app_base/templates/app_base/admin_panel/index.html:195
+#: app_base/templates/app_base/admin_panel/index.html:219
+msgid "Reddet"
+msgstr "Reddet"
+
+#: app_base/templates/app_base/admin_panel/index.html:199
+#: app_base/templates/app_base/admin_panel/index.html:223
+msgid "Detaylar"
+msgstr "Detaylar"
+
+#: app_base/templates/app_base/admin_panel/index.html:210
+msgid "Tiyatro Kulübü"
+msgstr "Tiyatro Kulübü"
+
+#: app_base/templates/app_base/admin_panel/index.html:211
+msgid "Geleneksel Tiyatro Oyunları"
+msgstr "Geleneksel Tiyatro Oyunları"
+
+#: app_base/templates/app_base/admin_panel/index.html:212
+msgid "Okulumuzde her sene düzenlenen geleneksel tiyatro oyunlarına siz de davetlisiniz."
+msgstr "Okulumuzde her sene düzenlenen geleneksel tiyatro oyunlarına siz de davetlisiniz."
+
+#: app_base/templates/app_base/club/announcement/announcement.html:54
+msgid "Duyuru"
+msgstr "Duyuru"
+
+#: app_base/templates/app_base/club/announcement/announcement.html:71
+#: app_base/templates/app_base/club/club.html:138
+#: app_base/templates/app_base/club/event/event.html:71
+msgid "Düzenle"
+msgstr "Düzenle"
+
+#: app_base/templates/app_base/club/announcement/announcement.html:91
+#: app_base/templates/app_base/club/club.html:158
+#: app_base/templates/app_base/club/event/event.html:91
+msgid "Sil"
+msgstr "Sil"
+
+#: app_base/templates/app_base/club/announcement/announcement.html:106
+#: app_base/templates/app_base/club/announcement/club_announcement_component.html:22
+#: app_base/templates/app_base/club/announcement/mobile_announcement_page.html:38
+#: app_base/templates/app_base/club/club.html:174
+#: app_base/templates/app_base/club/club.html:206
+#: app_base/templates/app_base/club/club_feed_component.html:14
+#: app_base/templates/app_base/club/event/club_event_component.html:22
+#: app_base/templates/app_base/club/event/event.html:105
+#: app_base/templates/app_base/club/event/mobile_event_page.html:38
+#: app_base/templates/app_base/old/room/room_activity_component.html:20
+msgid "önce"
+msgstr "önce"
+
+#: app_base/templates/app_base/club/announcement/announcement.html:114
+#: app_base/templates/app_base/club/club.html:182
+#: app_base/templates/app_base/club/event/event.html:113
+msgid "Tarafından Oluşturuldu"
+msgstr "Tarafından Oluşturuldu"
+
+#: app_base/templates/app_base/club/announcement/announcement.html:140
+msgid "Kulübün Diğer Duyuruları"
+msgstr "Kulübün Diğer Duyuruları"
+
+#: app_base/templates/app_base/club/announcement/club_announcement_component.html:5
+#: app_base/templates/app_base/club/announcement/mobile_announcement_page.html:19
+#: app_base/templates/app_base/club/club_list.html:22
+msgid "Son Duyurular"
+msgstr "Son Duyurular"
+
+#: app_base/templates/app_base/club/announcement/club_announcement_component.html:52
+#: app_base/templates/app_base/club/announcement/mobile_announcement_page.html:68
+#: app_base/templates/app_base/club/event/club_event_component.html:52
+#: app_base/templates/app_base/club/event/mobile_event_page.html:68
+msgid "Şurada"
+msgstr "Şurada"
+
+#: app_base/templates/app_base/club/announcement/club_announcement_component.html:52
+msgid "bir duyuru var"
+msgstr "bir duyuru var"
+
+#: app_base/templates/app_base/club/announcement/mobile_announcement_page.html:68
+#: app_base/templates/app_base/club/event/club_event_component.html:52
+#: app_base/templates/app_base/club/event/mobile_event_page.html:68
+msgid "bir etkinlik var"
+msgstr "bir etkinlik var"
+
+#: app_base/templates/app_base/club/club.html:91
+#: app_base/templates/app_base/club/club_list.html:30
+msgid "Kulüp"
+msgstr "Kulüp"
+
+#: app_base/templates/app_base/club/club.html:105
+msgid "Katıl!"
+msgstr "Katıl!"
+
+#: app_base/templates/app_base/club/club.html:119
+msgid "Etkinlik Oluştur"
+msgstr "Etkinlik Oluştur"
+
+#: app_base/templates/app_base/club/club.html:128
+msgid "Duyuru Oluştur"
+msgstr "Duyuru Oluştur"
+
+#: app_base/templates/app_base/club/club.html:194
+msgid "KULÜBÜN ETKİNLİKLERİ"
+msgstr "KULÜBÜN ETKİNLİKLERİ"
+
+#: app_base/templates/app_base/club/club.html:246
+msgid "Üyeler"
+msgstr "Üyeler"
+
+#: app_base/templates/app_base/club/club_feed_component.html:41
+msgid "Katıldı"
+msgstr "Katıldı"
+
+#: app_base/templates/app_base/club/club_list.html:15 templates/navbar.html:23
+msgid "Kulüp ara"
+msgstr "Kulüp ara"
+
+#: app_base/templates/app_base/club/club_list.html:20
+msgid "Konularda Ara"
+msgstr "Konularda Ara"
+
+#: app_base/templates/app_base/club/club_list.html:21
+#: app_base/templates/app_base/club/event/club_event_component.html:5
+#: app_base/templates/app_base/club/event/mobile_event_page.html:19
+msgid "Son Etkinlikler"
+msgstr "Son Etkinlikler"
+
+#: app_base/templates/app_base/club/club_list.html:31
+msgid "Kulüp Mevcut"
+msgstr "Kulüp Mevcut"
+
+#: app_base/templates/app_base/club/club_list.html:46
+msgid "Kulüp Oluştur"
+msgstr "Kulüp Oluştur"
+
+#: app_base/templates/app_base/club/event/event.html:54
+msgid "Etkinlik"
+msgstr "Etkinlik"
+
+#: app_base/templates/app_base/club/event/event.html:133
+msgid "Kulübün Diğer Etkinlikleri"
+msgstr "Kulübün Diğer Etkinlikleri"
+
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:20
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:20
+msgid "Duyuru Oluştur/Düzenle"
+msgstr "Duyuru Oluştur/Düzenle"
+
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:27
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:27
+msgid "Duyurunun Başlığı"
+msgstr "Duyurunun Başlığı"
+
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:31
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:31
+msgid "Duyurunun Açıklaması"
+msgstr "Duyurunun Açıklaması"
+
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:35
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:35
+msgid "Duyurunun Konusu"
+msgstr "Duyurunun Konusu"
+
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:46
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:46
+msgid "Duyurunun Fotoğrafı"
+msgstr "Duyurunun Fotoğrafı"
+
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:52
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:54
+#: app_base/templates/app_base/club/forms/club_form.html:75
+#: app_base/templates/app_base/club/forms/event/event_form.html:57
+#: app_base/templates/app_base/club/forms/event/event_form.html:59
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:61
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:63
+msgid "İptal Et"
+msgstr "İptal Et"
+
+#: app_base/templates/app_base/club/forms/announcement/announcement_form.html:56
+#: app_base/templates/app_base/club/forms/club_form.html:76
+#: app_base/templates/app_base/club/forms/event/event_form.html:61
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:65
+msgid "Kaydet"
+msgstr "Kaydet"
+
+#: app_base/templates/app_base/club/forms/club_form.html:20
+msgid "Kulüp Oluştur/Düzenle"
+msgstr "Kulüp Oluştur/Düzenle"
+
+#: app_base/templates/app_base/club/forms/club_form.html:27
+msgid "Kulübün Adı"
+msgstr "Kulübün Adı"
+
+#: app_base/templates/app_base/club/forms/club_form.html:31
+msgid "Kulübün Açıklaması"
+msgstr "Kulübün Açıklaması"
+
+#: app_base/templates/app_base/club/forms/club_form.html:35
+msgid "Kulübün Konusu"
+msgstr "Kulübün Konusu"
+
+#: app_base/templates/app_base/club/forms/club_form.html:46
+msgid "Kulübün Logosu"
+msgstr "Kulübün Logosu"
+
+#: app_base/templates/app_base/club/forms/event/event_form.html:20
+msgid "Etkinlik Oluştur/Düzenle"
+msgstr "Etkinlik Oluştur/Düzenle"
+
+#: app_base/templates/app_base/club/forms/event/event_form.html:27
+msgid "Etkinliğin Adı"
+msgstr "Etkinliğin Adı"
+
+#: app_base/templates/app_base/club/forms/event/event_form.html:31
+msgid "Etkinliğin Açıklaması"
+msgstr "Etkinliğin Açıklaması"
+
+#: app_base/templates/app_base/club/forms/event/event_form.html:35
+msgid "Etkinliğin Konusu"
+msgstr "Etkinliğin Konusu"
+
+#: app_base/templates/app_base/club/forms/event/event_form.html:46
+msgid "Etkinliğin Fotoğrafı"
+msgstr "Etkinliğin Fotoğrafı"
+
+#: app_base/templates/app_base/club/forms/event/event_form.html:51
+msgid "Diğer Kulüplere İşbirliği Teklif Et"
+msgstr "İşbirliği Teklif Et"
+
+#: app_base/templates/app_base/club/statistic/club_statistics.html:10
+msgid "İstatistikler"
+msgstr "İstatistikler"
+
+#: app_base/templates/app_base/club/statistic/club_statistics.html:16
+msgid "Üye sayısına göre sırala"
+msgstr "Üye sayısına göre sırala"
+
+#: app_base/templates/app_base/club/statistic/club_statistics.html:19
+msgid "Son bir aydaki ortalama etkinlik sayısına göre sırala"
+msgstr "Son bir aydaki ortalama etkinlik sayısına göre sırala"
+
+#: app_base/templates/app_base/club/statistic/eventorder.html:6
+msgid "Event Sayısı"
+msgstr "Event Sayısı"
+
+#: app_base/templates/app_base/club/statistic/memberorder.html:7
+msgid "Üye Sayısı"
+msgstr "Üye Sayısı"
+
+#: app_base/templates/app_base/delete.html:21
+msgid "Geri"
+msgstr "Geri"
+
+#: app_base/templates/app_base/delete.html:28
+msgid "Bunu silmek istediğine emin misin "
+msgstr "Bunu silmek istediğine emin misin "
+
+#: app_base/templates/app_base/login_register.html:13
+#: app_base/templates/app_base/login_register.html:54
+#: app_base/templates/app_base/login_register.html:144 templates/navbar.html:48
+msgid "Giriş Yap"
+msgstr "Giriş Yap"
+
+#: app_base/templates/app_base/login_register.html:17
+#: app_base/templates/app_base/login_register.html:78
+msgid "Aradığın Kulübü Bul!"
+msgstr "Aradığın Kulübü Bul!"
+
+#: app_base/templates/app_base/login_register.html:23
+#: app_base/templates/app_base/login_register.html:84
+#: app_base/templates/app_base/update_user.html:50
+#: app_base/templates/app_base/update_user_info.html:50
+msgid "Eposta"
+msgstr "Eposta"
+
+#: app_base/templates/app_base/login_register.html:24
+msgid "Öğrenci epostanızı giriniz, örn: 200201017@ostimteknik.edu.tr"
+msgstr "Öğrenci epostanızı giriniz, örn: 200201017@ostimteknik.edu.tr"
+
+#: app_base/templates/app_base/login_register.html:28
+#: app_base/templates/app_base/login_register.html:100
+msgid "Şifre"
+msgstr "Şifre"
+
+#: app_base/templates/app_base/login_register.html:59
+msgid "Henüz kaydolmadın mı?"
+msgstr "Henüz kaydolmadın mı?"
+
+#: app_base/templates/app_base/login_register.html:60
+#: app_base/templates/app_base/login_register.html:74
+#: app_base/templates/app_base/login_register.html:138
+msgid "Kaydol"
+msgstr "Kaydol"
+
+#: app_base/templates/app_base/login_register.html:88
+#: app_base/templates/app_base/update_user.html:40
+#: app_base/templates/app_base/update_user_info.html:40
+msgid "Ad"
+msgstr "Ad"
+
+#: app_base/templates/app_base/login_register.html:92
+#: app_base/templates/app_base/update_user.html:45
+#: app_base/templates/app_base/update_user_info.html:45
+msgid "Soyad"
+msgstr "Soyad"
+
+#: app_base/templates/app_base/login_register.html:96
+#: app_base/templates/app_base/update_user.html:55
+#: app_base/templates/app_base/update_user_info.html:55
+msgid "Telefon"
+msgstr "Telefon"
+
+#: app_base/templates/app_base/login_register.html:104
+msgid "Şifre Onayı"
+msgstr "Şifre Onayı"
+
+#: app_base/templates/app_base/login_register.html:143
+msgid "Zaten kaydoldun mu?"
+msgstr "Zaten kaydoldun mu?"
+
+#: app_base/templates/app_base/old/room/room_activity_component.html:3
+msgid "Son Aktiviteler"
+msgstr "Son Aktiviteler"
+
+#: app_base/templates/app_base/old/room/room_activity_component.html:33
+msgid "sil"
+msgstr "sil"
+
+#: app_base/templates/app_base/old/room/room_activity_component.html:50
+msgid "Şurada "
+msgstr "Şurada"
+
+#: app_base/templates/app_base/old/room/room_activity_component.html:50
+msgid "bir cevap yazdı"
+msgstr "bir cevap yazdı"
+
+#: app_base/templates/app_base/update_user.html:20
+msgid "Profilini Düzenle"
+msgstr "Profilini Düzenle"
+
+#: app_base/templates/app_base/update_user.html:35
+#: app_base/templates/app_base/update_user_info.html:35
+msgid "Profil Fotoğrafı"
+msgstr "Profil Fotoğrafı"
+
+#: app_base/templates/app_base/update_user.html:81
+#: app_base/templates/app_base/update_user_info.html:81
+msgid "İptal"
+msgstr "İptal"
+
+#: app_base/templates/app_base/update_user.html:82
+#: app_base/templates/app_base/update_user_info.html:82
+msgid "Güncelle"
+msgstr "Güncelle"
+
+#: app_base/templates/app_base/update_user_info.html:20
+msgid "Bilgilerini Düzenle"
+msgstr "Bilgilerini Düzenle"
+
+#: app_base/templates/app_base/user_profile.html:25
+msgid "Profili Düzenle"
+msgstr "Profili Düzenle"
+
+#: app_base/templates/app_base/user_profile.html:29
+msgid "Hakkında"
+msgstr "Hakkında"
+
+#: app_base/templates/app_base/user_profile.html:38
+msgid "Üye Olduğu Kulüpler"
+msgstr "Üye Olduğu Kulüpler"
+
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:51
+msgid "İlgili Kulüpler"
+msgstr "İlgili Kulüpler"
+
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/announcement_form_test.html:55
+msgid "Katılımcılar"
+msgstr "Katılımcılar"
+
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/dropdown_list_w_checkbox.html:10
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/dropdown_list_w_checkbox_3.html:18
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/localization_test.html:11
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/localization_test_2.html:11
+#: app_benchmarks_and_tests/templates/app_benchmarks_and_tests/localization_test_3.html:11
+msgid "Let's translate this"
+msgstr "Hadi bunu çevirelim"
+
+#: templates/navbar.html:60
+msgid "Ayarlar"
+msgstr "Ayarlar"
+
+#: templates/navbar.html:72
+msgid "Çıkış Yap"
+msgstr "Çıkış Yap"
+
+#~ msgid "api/"
+#~ msgstr "turkceapi/"

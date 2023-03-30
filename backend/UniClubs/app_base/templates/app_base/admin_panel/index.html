@@ -1,0 +1,264 @@
+{% load static %}
+
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - UniClubs</title>
+    <link rel="shortcut icon" href="{% static 'defaults/uniclubs_icon.png' %}" type="image/x-icon" />
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/iconly/bold.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.svg' %}" type="image/x-icon">
+
+    <style>
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .logo a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        .logo img {
+            width: 50%!important;
+            height: 50%!important;
+            /* margin-right: 10px; */
+            object-fit: contain;
+
+        }
+
+        .logo img:last-child {
+            width: 30%!important;
+            height: 30%!important;        }
+        #language-form {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 999;
+            color: #435ebe;
+        }
+        .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="language-form" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{redirect_to}}">
+        <select name="language" id="language-select" onchange="document.getElementById('language-form').submit();">
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <noscript><input type="submit" value="Change Language"></noscript>
+      </form>  
+      
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="{% url 'adminhome' %}"><img src="{% static 'defaults/uc-new-big.png' %}" alt="Logo" srcset=""><img src="{% static 'assets/images/logo/ostim.png' %}" alt="Logo" srcset=""></a>
+                            <!-- <a href="index.html"><img src="assets/images/logo/uc.png" alt="Logo" srcset=""></a>
+                            <a href="index.html"><img src="assets/images/logo/ostim.png" alt="Logo" srcset=""></a> -->
+                        </div>
+                        <!-- <div class="logo">
+                        </div> -->
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">{% trans "Etkinlik Yönetim" %}</li>
+
+                     
+
+                        <li class="sidebar-item active">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>{% trans "Onay Bekleyenler" %}</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>{% trans "Yönlendirilenler" %}</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>{% trans "Reddedilenler" %}</span>
+                            </a>
+                        </li>
+                    
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <!-- <i class="bi bi-stack"></i> -->
+                                <i class="bi bi-collection-fill"></i>
+                                <span>{% trans "Onaylananlar" %}</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="component-alert.html">{% trans "Raporu Teslim Edilenler" %}</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="component-badge.html">{% trans "Raporu Teslim Edilmeyenenler" %}</a>
+                                </li>
+                             
+                            </ul>
+                        </li>
+                        
+                        <li class="sidebar-title">{% trans "İdari Personel Yönetim" %}</li>
+                  
+
+                        <li class="sidebar-item  has-sub">
+                            <a href="#" class='sidebar-link'>
+                                <i class="bi bi-hexagon-fill"></i>
+                                <span>{% trans "Yetkililer" %}</span>
+                            </a>
+                            <ul class="submenu ">
+                                <li class="submenu-item ">
+                                    <a href="form-element-input-group.html">{% trans "Sistem Admini" %}</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="form-element-input.html">{% trans "Kurum Personeli" %}</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="form-element-select.html">{% trans "Kulüp Lideri" %}</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="form-element-radio.html">{% trans "Kulüp Yöneticisi" %}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            
+            <div class="bg-gray-200 h-screen container">
+
+                <div class="row">
+
+                <div class="p-2 col">
+                    <div class=" w-4/5 flex h-72 flex-col rounded-md bg-slate-100 p-5 shadow-xl ring-1 ring-black/10">
+                      <div class="flex flex-row">
+                        <img src="{% static 'defaults/logo.jpeg'%}" class="mr-8 h-40 rounded-md shadow-xl ring-2 ring-sky-600 ring-opacity-20" alt="" />
+                        <div class="flex flex-col">
+                          <h1 class="text-xl font-semibold text-gray-900 text-4xl">{% trans "Google Developer Students Club" %}</h1>
+                          <h1 class=" text-sky-600 text-2xl mt-2">{% trans "Flutter Bootcamp" %}</h1>
+                          <h1 class="text-gray-800 mt-1">{% trans "Deneyimli Google Flutter eğitmenleriyle 10 günlük sertifikali bir bootcamp düzenliyoruz." %}</h1>
+                        </div>
+                      </div>
+                  
+                      <div class="flex flex-row justify-between">
+                        <div class="flex flex-row">
+                          <button class=" mt-4 ml-0 rounded-lg bg-emerald-300 py-2 px-4 text-gray-900 shadow-lg duration-150 hover:-translate-y-1 hover:bg-emerald-400">{% trans 'Kabul et' %}</button>
+                          <button class=" mt-4 ml-5 rounded-lg bg-rose-300 py-2 px-4 text-gray-900 shadow-lg duration-150 hover:-translate-y-1 hover:bg-rose-400">{% trans 'Reddet' %}</button>
+                        </div>
+                  
+                        <div class="self-center">
+                          <button class="mr-10 flex items-center rounded-xl bg-gray-400/10 px-4 py-2 text-gray-900 shadow-md duration-150 hover:translate-x-1 hover:bg-gray-400/30">{% trans 'Detaylar' %}<img src="https://img.icons8.com/windows/256/long-arrow-right.png" class="ml-2 h-5" alt="" /></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+
+                  <div class="p-2">
+                    <div class=" w-4/5 flex h-72 flex-col rounded-md bg-slate-100 p-5 shadow-xl ring-1 ring-black/10">
+                      <div class="flex flex-row">
+                        <img src="{% static 'defaults/tiyatro.png'%}"  class="mr-8 h-40 rounded-md shadow-xl ring-2 ring-sky-600 ring-opacity-20" alt="" />
+                        <div class="flex flex-col">
+                          <h1 class="text-xl font-semibold text-gray-900 text-4xl">{% trans "Tiyatro Kulübü" %}</h1>
+                          <h1 class=" text-sky-600 text-2xl mt-2">{% trans "Geleneksel Tiyatro Oyunları" %}</h1>
+                          <h1 class="text-gray-800 mt-1">{% trans "Okulumuzde her sene düzenlenen geleneksel tiyatro oyunlarına siz de davetlisiniz." %}</h1>
+                        </div>
+                      </div>
+                  
+                      <div class="flex flex-row justify-between">
+                        <div class="flex flex-row">
+                          <button class=" mt-4 ml-0 rounded-lg bg-emerald-300 py-2 px-4 text-gray-900 shadow-lg duration-150 hover:-translate-y-1 hover:bg-emerald-400">{% trans 'Kabul et' %}</button>
+                          <button class=" mt-4 ml-5 rounded-lg bg-rose-300 py-2 px-4 text-gray-900 shadow-lg duration-150 hover:-translate-y-1 hover:bg-rose-400">{% trans 'Reddet' %}</button>
+                        </div>
+                  
+                        <div class="self-center">
+                          <button class="mr-10 flex items-center rounded-xl bg-gray-400/10 px-4 py-2 text-gray-900 shadow-md duration-150 hover:translate-x-1 hover:bg-gray-400/30">{% trans 'Detaylar' %}<img src="https://img.icons8.com/windows/256/long-arrow-right.png" class="ml-2 h-5" alt="" /></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+                  
+                    </div>
+            </div>  
+
+        </div>
+                  
+                  
+<!-- 
+            </div>
+        
+            </div> -->
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2023 &copy; Serhat Keskin</p>
+                    </div>
+                    <div class="float-end">
+                        <p style="margin-right: 1rem;">Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a
+                                href="{% url 'serhat' %}">GDSC</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div> 
+    </div>
+    
+    <script src="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    
+    <script src="{% static 'assets/vendors/apexcharts/apexcharts.js' %}"></script>
+    <script src="{% static 'assets/js/pages/dashboard.js' %}"></script>
+    
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.2.3/cdn.js'></script>
+</body>
+
+</html>

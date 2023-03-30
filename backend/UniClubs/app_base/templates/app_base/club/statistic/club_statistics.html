@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% load i18n %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{% trans "İstatistikler" %}</h1>
+        </div>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <a href={% url 'statistics_clubs' %} class="btn btn-primary btn-lg btn-block" role="button">{% trans "Üye sayısına göre sırala" %}</a>
+        </div>
+        <div class="col-md-6">
+            <a href={% url 'statistics_events' %} class="btn btn-primary btn-lg btn-block" role="button">{% trans "Son bir aydaki ortalama etkinlik sayısına göre sırala" %}</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

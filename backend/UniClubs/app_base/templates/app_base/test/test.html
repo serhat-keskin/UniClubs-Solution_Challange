@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{% static 'images/defaults/logo.jpeg' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>TEST TEMPLATE PAGE</title>
+  </head>
+
+  <body>
+    <h2>static: {% static 'test'%}</h2>
+    <br>
+    <h2>get_static_prefix: {% get_static_prefix %}</h2>
+    <br>
+    <h2>get_media_prefix: {% get_media_prefix %}</h2>
+    <br>
+    <br>
+    <h2>{{request.user.avatar.url}}</h2>
+    <img src="{{request.user.avatar.url}}"alt="avatar"/>
+    <br>
+    <h1>test_public_media_file</h1> 
+    <img style="width: 300px; height: 300px;" src="{% get_media_prefix %}public_test/test.jpg" alt="test">
+    <h1>Resmimiz "public" iken başarılı bir şekilde getirildi!</h1>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

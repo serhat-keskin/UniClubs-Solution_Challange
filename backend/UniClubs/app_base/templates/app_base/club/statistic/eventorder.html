@@ -1,0 +1,10 @@
+{% extends 'main.html' %}
+
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Event Sayısı" %}</h1>
+    {% for club in clubeventnumberorder %}
+        <div>{{club}}--{{club.event.count}}</div><br>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multi-select dropdown example</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'styles/dd.css' %}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      {% get_current_language as LANGUAGE_CODE %}
+      <h1>ŞUANKİ DİL :) --->  {{LANGUAGE_CODE}}</h1>
+      <h1>{% trans "Let's translate this" %}</h1>
+    </div>
+
+    <div class="js" style="">
+      <div class="language-picker js-language-picker" data-trigger-class="btn btn--subtle">
+      <form action="{% url 'set_language'%}" class="language-picker__form" id="language-form" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{redirect_to}}">
+        <label for="language-picker-select">Select your language</label>
+        <select name="language" id="language-picker-select" onchange="document.getElementById('language-form').submit();">
+          <option lang="en" value="en" {% if English == LANGUAGE_CODE %}selected{% endif %}>English</option>
+          <option lang="tr" value="tr" {% if Türkçe == LANGUAGE_CODE %}selected{% endif %}>Türkçe</option>
+          <!-- {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+              <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                  {{ language.name_local }} ({{ language.code }})
+              </option>
+          {% endfor %} -->
+        </select>
+      </form>
+    </div>
+  </div>
+  <script src="{% static 'js/dd.js' %}"></script>
+
+  </body>
+</html>
+<!-- onchange="document.getElementById('language-form').submit(); -->

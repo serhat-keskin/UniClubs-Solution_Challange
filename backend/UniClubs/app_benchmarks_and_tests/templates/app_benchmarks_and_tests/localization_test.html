@@ -1,0 +1,37 @@
+{% extends 'main.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<main class="layout layout--3">
+      <div class="container">
+        {% get_current_language as LANGUAGE_CODE %}
+        <h1>ŞUANKİ DİL :) --->  {{LANGUAGE_CODE}}</h1>
+        <h1>{% trans "Let's translate this" %}</h1>
+      </div>
+      <div class="container">
+
+        <h1><a href="{% url 'routes' %}">{% url 'routes' %}</a></h1>
+        <h1><a href="{% url 'localization_2' %}">{% url 'localization_2' %}</a></h1>
+
+
+        <form action="{% url 'set_language'%}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{redirect_to}}">
+            <select name="language" id="">
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ language.name_local }} ({{ language.code }})
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Change Language">
+        </form>
+
+      </div>
+</main>
+
+{% endblock content %}

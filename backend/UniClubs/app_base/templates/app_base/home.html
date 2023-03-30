@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<main class="layout layout--3">
+      <div class="container">
+        <!-- Topics Start -->
+
+        <!-- {% include 'app_base/club/topic/club_topics_component.html' %} -->
+
+        
+        <!-- Topics End -->
+
+        <!-- Announcement Start -->
+
+        {% include 'app_base/club/announcement/club_announcement_component.html' %}
+
+        
+        <!-- Announcement End -->
+
+        
+        <!-- Clubs List -->
+        
+        {% include 'app_base/club/club_list.html' %}
+
+        
+        <!-- Club List End -->
+        
+        <!-- Room List Start -->
+
+
+        
+        <!-- Room List End -->
+
+        <!-- Activities Start -->
+
+        {% include 'app_base/club/event/club_event_component.html' %}
+
+        <!-- Activities End -->
+      </div>
+</main>
+
+{% endblock content %}

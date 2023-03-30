@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+{% load i18n %}
+
+{% block content %}
+  <main class="profile-page layout layout--3">
+    <div class="container">
+      <!-- Topics Start -->
+      {% include 'app_base/club/announcement/club_announcement_component.html' %}
+
+      <!-- Topics End -->
+
+      <!-- Room List Start -->
+      <div class="roomList">
+        <div class="profile">
+          <div class="profile__avatar">
+            <div class="avatar avatar--large active">
+              <img src="{{user.avatar.url}}" />
+            </div>
+          </div>
+          <div class="profile__info">
+            <h3>{{user}}</h3>
+            <p>@{{user}}</p>
+            {% if request.user == user %}
+            <a href="{% url 'update_user'%}" class="btn btn--main btn--pill">{% trans "Profili Düzenle" %}</a>
+            {% endif %}
+          </div>
+          <div class="profile__about">
+            <h3>{% trans "Hakkında" %}</h3>
+            <p>
+              
+            </p>
+          </div>
+        </div>
+
+        <div class="roomList__header">
+          <div>
+            <h2>"{{user}}" {% trans "Üye Olduğu Kulüpler" %}</a>
+            </h2>
+          </div>
+        </div>
+
+        {% include 'app_base/club/club_feed_component.html'%}
+      </div>
+      <!-- Room List End -->
+
+      <!-- Activities Start -->
+      {% include 'app_base/club/event/club_event_component.html' %}
+
+      <!-- Activities End -->
+    </div>
+  </main>
+  {% endblock content %}
